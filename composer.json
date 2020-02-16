@@ -6,6 +6,7 @@
             "email": "fazvil@mail.ru"
         }
     ],
+    "license": "MIT",
     "bin": ["bin/brain-games"],
     "scripts": {
         "phpcs": "vendor/bin/phpcs"
