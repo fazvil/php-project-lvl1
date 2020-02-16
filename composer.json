@@ -6,7 +6,7 @@
             "email": "fazvil@mail.ru"
         }
     ],
-    "license": "LGPL-3.0 +",
+    "license": "proprietary",
     "bin": ["bin/brain-games"],
     "scripts": {
         "phpcs": "vendor/bin/phpcs"
