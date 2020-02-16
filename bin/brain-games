@@ -12,8 +12,6 @@ if (file_exists($autoloadPath1)) {
 
 use function BrainGames\Cli\run;
 
-echo 'Welcome to the Brain Games!';
-
 run();
 
 
