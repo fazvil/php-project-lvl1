@@ -6,7 +6,7 @@
             "email": "fazvil@mail.ru"
         }
     ],
-    "license": "proprietary",
+    "license": "MIT",
     "bin": ["bin/brain-even"],
     "scripts": {
         "phpcs": "vendor/bin/phpcs"
