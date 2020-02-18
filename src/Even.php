@@ -44,5 +44,3 @@ function run()
     // Игрок ответил на 3 вопроса подряд
     line("Congratulations, {$name}!");
 }
-
-
