@@ -7,12 +7,12 @@
         }
     ],
     "license": "proprietary",
-    "bin": ["bin/brain-games"],
+    "bin": ["bin/brain-even"],
     "scripts": {
         "phpcs": "vendor/bin/phpcs"
     },
     "autoload": {
-	"files": ["src/Cli.php"]
+	    "files": ["src/Cli.php"]
     },
     "require": {
         "wp-cli/php-cli-tools": "^0.11.11"
