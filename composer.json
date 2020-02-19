@@ -9,12 +9,15 @@
     "license": "MIT",
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "bin": ["bin/brain-even"],
+    "bin": ["bin/brain-even",
+            "bin/brain-calc"],
     "scripts": {
         "phpcs": "vendor/bin/phpcs"
     },
     "autoload": {
-	    "files": ["src/Even.php"]
+        "files": ["src/Cli.php",
+                  "src/games/Even.php",
+                  "src/games/Calc.php"]
     },
     "require": {
         "wp-cli/php-cli-tools": "^0.11.11"
