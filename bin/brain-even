@@ -12,6 +12,7 @@ if (file_exists($autoloadPath1)) {
 
 use function BrainGames\Cli\run;
 
+// Игра 'Проверка на четность'
 $game = 'even';
 $greet = 'Answer "yes" if the number is even, otherwise answer "no".';
 run($game, $greet);
