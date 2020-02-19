@@ -12,6 +12,7 @@ if (file_exists($autoloadPath1)) {
 
 use function BrainGames\Cli\run;
 
+// Игра "Калькулятор"
 $game = 'calc';
 $greet = 'What is the result of the expression?';
 run($game, $greet);
