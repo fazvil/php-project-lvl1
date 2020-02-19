@@ -31,7 +31,7 @@ function run($game, $greet)
 
         // Получаем ответ от игрока
         $answer = prompt('Your answer');
-        if ((int) $answer === $correct) {
+        if ($answer === (string) $correct) {
             line('Correct!');
             $result += 1;
         } else {
