@@ -2,6 +2,8 @@
 
 namespace BrainGames\Games\Even;
 
+use function BrainGames\Cli\run;
+
 // Получаем данные для игры "Проверка на четность"
 function even()
 {
@@ -12,4 +14,14 @@ function even()
         $correct = 'no';
     }
     return [$gues, $correct];
+}
+
+function runi()
+{
+    $greet = 'Answer "yes" if the number is even, otherwise answer "no".';
+    $data = [];
+    for ($i = 0; $i < 3; $i++) {
+        $data[] = even();
+    }
+    run($greet, $data);
 }

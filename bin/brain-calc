@@ -10,9 +10,7 @@ if (file_exists($autoloadPath1)) {
 	require_once $autoloadPath2;
 }
 
-use function BrainGames\Cli\run;
+use function BrainGames\Games\Calc\runi;
 
 // Игра "Калькулятор"
-$game = 'calc';
-$greet = 'What is the result of the expression?';
-run($game, $greet);
+runi();

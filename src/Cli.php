@@ -4,14 +4,10 @@ namespace BrainGames\Cli;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Games\Even\even;
-use function BrainGames\Games\Calc\calc;
 
-// Запускаем нунжную игру, в зависимости от принятого аргумента
-function run($game, $greet)
+// Движок Brain Games
+function run($greet, $data)
 {
-    $result = 0;
-
     // Узнаем имя игрока и приветсвуем
     line('Welcome to the Brain Game!');
     line($greet);
@@ -19,13 +15,9 @@ function run($game, $greet)
     $name = prompt('May If have your name?');
     line("Hello, %s!", $name);
 
-    // Задаем вопрос в цикле, в зависимости от входных аргументов
-    while ($result !== 3) {
-        if ($game === 'even') {
-            [$gues, $correct] = even();
-        } elseif ($game === 'calc') {
-            [$gues, $correct] = calc();
-        }
+    // В цикле задаем вопрос и узнаем ответ
+    foreach ($data as $part) {
+        [$gues, $correct] = $part; // Значение, и правильный вариант ответа
         line();
         line("Question: {$gues}");
 
@@ -33,7 +25,6 @@ function run($game, $greet)
         $answer = prompt('Your answer');
         if ($answer === (string) $correct) {
             line('Correct!');
-            $result += 1;
         } else {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$correct}'");
             return;

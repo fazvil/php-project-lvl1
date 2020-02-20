@@ -2,6 +2,8 @@
 
 namespace BrainGames\Games\Calc;
 
+use function BrainGames\Cli\run;
+
 // Получаем данные для игры "Калькулятор"
 function calc()
 {
@@ -19,4 +21,14 @@ function calc()
         $gues = "{$gues1} * {$gues2}";
     }
     return [$gues, $result];
+}
+
+function runi()
+{
+    $greet = 'What is the result of the expression?';
+    $data = [];
+    for ($i = 0; $i < 3; $i++) {
+        $data[] = calc();
+    }
+    run($greet, $data);
 }
