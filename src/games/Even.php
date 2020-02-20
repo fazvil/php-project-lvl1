@@ -2,26 +2,20 @@
 
 namespace BrainGames\Games\Even;
 
-use function BrainGames\Cli\run;
-
-// Получаем данные для игры "Проверка на четность"
-function even()
+// Описание игры
+function rulesGame()
 {
-    $gues = rand(1, 100);
-    if ($gues % 2 === 0) {
-        $correct = 'yes';
-    } else {
-        $correct = 'no';
-    }
-    return [$gues, $correct];
+    return 'Answer "yes" if the number is even, otherwise answer "no".';
 }
 
-function runi()
+// Генерация данных для игры "Проверка на четность"
+function getDataEven($amoundRounds)
 {
-    $greet = 'Answer "yes" if the number is even, otherwise answer "no".';
     $data = [];
-    for ($i = 0; $i < 3; $i++) {
-        $data[] = even();
+    for ($i = 0; $i < $amoundRounds; $i++) {
+        $guessNumber = rand(1, 100);
+        $correct = ($guessNumber % 2 === 0) ? 'yes' : 'no';
+        $data[] = [$guessNumber, $correct];
     }
-    run($greet, $data);
+    return $data;
 }

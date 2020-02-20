@@ -10,7 +10,10 @@ if (file_exists($autoloadPath1)) {
 	require_once $autoloadPath2;
 }
 
-use function BrainGames\Games\Even\runi;
+use function BrainGames\Games\Even\rulesGame;
+use function BrainGames\Games\Even\getDataEven;
+use function BrainGames\Cli\run;
 
-// Игра 'Проверка на четность'
-runi();
+$amoundRounds = 3; // Количество раундов
+$data = getDataEven($amoundRounds); // Генерируем значения для игры
+run(rulesGame(), $data); // Запускаем игру
