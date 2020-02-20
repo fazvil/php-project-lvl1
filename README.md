@@ -9,5 +9,8 @@
 Калькулятор
 [![asciicast](https://asciinema.org/a/94HfW96WVlCTSz8HRAelE5GhR.svg)](https://asciinema.org/a/94HfW96WVlCTSz8HRAelE5GhR)
 
-Нод
+НОД
 [![asciicast](https://asciinema.org/a/l07flWIQDfAIle8DTVQlHFbz7.svg)](https://asciinema.org/a/l07flWIQDfAIle8DTVQlHFbz7)
+
+Арифметическая прогрессия
+[![asciicast](https://asciinema.org/a/t3wJrERciFLAQjHsMgkR1QiDa.svg)](https://asciinema.org/a/t3wJrERciFLAQjHsMgkR1QiDa)
