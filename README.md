@@ -5,7 +5,7 @@
 ### **BrainGames**
 
 Установить пакет глобально
-    ~$ composer global require fazvil/php-project-lvl1:dev-master
+    `~$ composer global require fazvil/php-project-lvl1:dev-master`
 [![asciicast](https://asciinema.org/a/slMpQFxckCsWkZWvmGEJ59hsy.svg)](https://asciinema.org/a/slMpQFxckCsWkZWvmGEJ59hsy)
 
 "Проверка на четность"
