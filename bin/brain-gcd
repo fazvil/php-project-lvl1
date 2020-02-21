@@ -10,7 +10,10 @@ if (file_exists($autoloadPath1)) {
 	require_once $autoloadPath2;
 }
 
-use function BrainGames\Games\Gcd\runi;
+use function BrainGames\Games\Gcd\rulesGame;
+use function BrainGames\Games\Gcd\getData;
+use function BrainGames\Cli\run;
 
-// Игра "НОД"
-runi();
+$rulesGame = rulesGame(); // Описание игры
+$data = getData();        // Генерируем значения для игры
+run($rulesGame, $data);   // Запускаем игру

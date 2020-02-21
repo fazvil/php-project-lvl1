@@ -11,9 +11,9 @@ if (file_exists($autoloadPath1)) {
 }
 
 use function BrainGames\Games\Even\rulesGame;
-use function BrainGames\Games\Even\getDataEven;
+use function BrainGames\Games\Even\getData;
 use function BrainGames\Cli\run;
 
-$amoundRounds = 3; // Количество раундов
-$data = getDataEven($amoundRounds); // Генерируем значения для игры
-run(rulesGame(), $data); // Запускаем игру
+$rulesGame = rulesGame(); // Описание игры
+$data = getData();        // Генерируем значения для игры
+run($rulesGame, $data);   // Запускаем игру

@@ -2,31 +2,31 @@
 
 namespace BrainGames\Games\Gcd;
 
-use function BrainGames\Cli\run;
-
-function gcd()
+// Описание игры
+function rulesGame()
 {
-    $a = rand(1, 50);
-    $b = rand(1, 50);
-    $gues = "{$a} {$b}";
-
-    while ($a != $b) {
-        if ($a > $b) {
-            $a -= $b;
-        } else {
-            $b -= $a;
-        }
-    }
-    $result = $a;
-    return [$gues, $result];
+    return 'Find the greatest common divisor of given numbers.';
 }
 
-function runi()
+// Генерация массива данных для игры "НОД"
+function getData()
 {
-    $greet = 'Find the greatest common divisor of given numbers.';
+    $amoundRounds = 3;                                      // Количество раундов
     $data = [];
-    for ($i = 0; $i < 3; $i++) {
-        $data[] = gcd();
+    for ($i = 0; $i < $amoundRounds; $i++) {
+        $num1 = rand(1, 50);
+        $num2 = rand(1, 50);
+        $guess = "{$num1} {$num2}";
+
+        while ($num1 != $num2) {
+            if ($num1 > $num2) {
+                $num1 -= $num2;
+            } else {
+                $num2 -= $num1;
+            }
+        }
+        $result = $num1;
+        $data[] = [$guess, $result];
     }
-    run($greet, $data);
+    return $data;
 }

@@ -2,34 +2,34 @@
 
 namespace BrainGames\Games\Progression;
 
-use function BrainGames\Cli\run;
-
-function progression()
+// Описание игры
+function rulesGame()
 {
-    $startNum = rand(1, 5);
-    $step = rand(1, 5);
-    $empty = rand(1, 10);
-    $str = '';
-    $temp = $startNum;
-    for ($i = 1; $i < 11; $i++) {
-        if ($i === $empty) {
-            $str .= '.. ';
-            $temp += $step;
-            $gues = $temp;
-        } else {
-            $temp += $step;
-            $str .= (string) $temp . ' ';
-        }
-    }
-    return [$str, $gues];
+    return 'What number is missing in the progression?';
 }
 
-function runi()
+// Генерация массива данных для игры "Арифметическая прогрессия"
+function getData()
 {
-    $greet = 'What number is missing in the progression?';
+    $amoundRounds = 3;                                      // Количество раундов
     $data = [];
-    for ($i = 0; $i < 3; $i++) {
-        $data[] = progression();
+    for ($i = 0; $i < $amoundRounds; $i++) {
+        $startNum = rand(1, 5);  // Стартовое число
+        $step = rand(1, 5);      // Шаг
+        $empty = rand(1, 10);    // Позиция пустого значения
+        $str = '';               // Получаемый вывод
+        $value = $startNum;      // Добавляемое в $str значение
+        for ($i = 1; $i < 11; $i++) {
+            if ($i === $empty) {
+                $str .= '.. ';
+                $value += $step;
+                $correct = $value;
+            } else {
+                $value += $step;
+                $str .= (string) $value . ' ';
+            }
+        }
+        $data = [$str, $correct];
     }
-    run($greet, $data);
+    return $data;
 }

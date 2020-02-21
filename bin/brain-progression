@@ -10,7 +10,10 @@ if (file_exists($autoloadPath1)) {
 	require_once $autoloadPath2;
 }
 
-use function BrainGames\Games\Progression\runi;
+use function BrainGames\Games\Progression\rulesGame;
+use function BrainGames\Games\Progression\getData;
+use function BrainGames\Cli\run;
 
-// Игра 'Арифметическая прогрессия'
-runi();
+$rulesGame = rulesGame(); // Описание игры
+$data = getData();        // Генерируем значения для игры
+run($rulesGame, $data);   // Запускаем игру

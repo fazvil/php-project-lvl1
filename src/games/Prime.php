@@ -2,31 +2,31 @@
 
 namespace BrainGames\Games\Prime;
 
-use function BrainGames\Cli\run;
-
-function prime()
+// Описание игры
+function rulesGame()
 {
-    $gues = rand(4, 100);
-    if ($gues === 2 || $gues === 3) {
-        $result = 'yes';
-    }
-    for ($i = 2; $i <= intdiv($gues, 2); $i++) {
-        if ($gues % $i === 0) {
-            $result = 'no';
-            break;
-        } else {
-            $result = 'yes';
-        }
-    }
-    return [$gues, $result];
+    return 'Answer "yes" if given number is prime. Otherwise answer "no".';
 }
 
-function runi()
+// Генерация массива данных для игры "Простое ли число?"
+function getData()
 {
-    $greet = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+    $amoundRounds = 3;                                      // Количество раундов
     $data = [];
-    for ($i = 0; $i < 3; $i++) {
-        $data[] = prime();
+    for ($i = 0; $i < $amoundRounds; $i++) {
+        $guess = rand(2, 100);
+        if ($guess == 2 || $guess == 3) {
+            $correct = 'yes';
+        }
+        for ($divider = 2; $divider <= intdiv($guess, 2); $divider++) {
+            if ($guess % $divider == 0) {
+                $correct = 'no';
+                break;
+            } else {
+                $correct = 'yes';
+            }
+        }
+        $data[] = [$guess, $correct];
     }
-    run($greet, $data);
+    return $data;
 }

@@ -1,25 +1,28 @@
 <?php
 
+/**
+ * Движок сборника игр "BrainGames"
+ */
+
 namespace BrainGames\Cli;
 
 use function cli\line;
 use function cli\prompt;
 
-// Движок Brain Games
-function run($greet, $data)
+function run($rulesGame, $data)
 {
     // Узнаем имя игрока и приветсвуем
     line('Welcome to the Brain Game!');
-    line($greet);
+    line($rulesGame);
     line();
     $name = prompt('May If have your name?');
     line("Hello, %s!", $name);
 
-    // В цикле задаем вопрос и узнаем ответ
+    // В цикле задаем вопрос и получаем ответ
     foreach ($data as $part) {
-        [$gues, $correct] = $part; // Значение, и правильный вариант ответа
+        [$guess, $correct] = $part; // Значение, и правильный вариант ответа
         line();
-        line("Question: {$gues}");
+        line("Question: {$guess}");
 
         // Получаем ответ от игрока
         $answer = prompt('Your answer');
@@ -31,7 +34,7 @@ function run($greet, $data)
         }
     }
 
-    // Если игрок 3 раза подряд ответил верно, выводим сообщение
+    // Если игрок ответил верно на все 3 вопроса, выводится сообщение
     line();
     line("Congratulations, {$name}!");
 }
