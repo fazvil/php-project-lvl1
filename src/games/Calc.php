@@ -18,17 +18,17 @@ function getData()
         $guess2 = rand(1, 10);
         $operation = rand(1, 3);
         switch ($operation) {
-        case 1:
-            $task = "{$guess1} + {$guess2}";
-            $correct = $guess1 + $guess2;
-            break;
-        case 2:
-            $task = "{$guess1} - {$guess2}";
-            $correct = $guess1 - $guess2;
-            break;
-        case 3:
-            $task = "{$guess1} * {$guess2}";
-            $correct = $guess1 * $guess2;
+            case 1:
+                $task = "{$guess1} + {$guess2}";
+                $correct = $guess1 + $guess2;
+                break;
+            case 2:
+                $task = "{$guess1} - {$guess2}";
+                $correct = $guess1 - $guess2;
+                break;
+            case 3:
+                $task = "{$guess1} * {$guess2}";
+                $correct = $guess1 * $guess2;
         }
         $data[] = [$task, $correct];
     }
