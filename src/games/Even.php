@@ -9,7 +9,7 @@ function gameEven()
 {
     $data = [];
     for ($i = 0; $i < \BrainGames\Cli\AMOUND_ROUNDS; $i++) {
-        $guessNumber = rand(1, 100);             
+        $guessNumber = rand(1, 100);
         $correct = ($guessNumber % 2 === 0) ? 'yes' : 'no';
         $data[] = [$guessNumber, $correct];
     }

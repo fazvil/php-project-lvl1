@@ -6,7 +6,7 @@ use BrainGames\Cli;
 
 const RULES_GAME = 'What is the result of the expression?';
 function gameCalc()
-{                                  
+{
     $data = [];
     for ($i = 0; $i < \BrainGames\Cli\AMOUND_ROUNDS; $i++) {
         $guessNum1 = rand(1, 10);
