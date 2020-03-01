@@ -1,19 +1,17 @@
 <?php
 
-/**
- * Движок сборника игр "BrainGames"
- */
-
 namespace BrainGames\Cli;
 
 use function cli\line;
 use function cli\prompt;
 
+const AMOUND_ROUNDS = 3; // Число раундов
+
 function run($rulesGame, $data)
 {
     // Узнаем имя игрока и приветсвуем
     line('Welcome to the Brain Game!');
-    line($rulesGame);
+    line($rulesGame); // Описание игры, полученное в аргументе функции
     line();
     $name = prompt('May If have your name?');
     line("Hello, %s!", $name);
@@ -26,7 +24,7 @@ function run($rulesGame, $data)
 
         // Получаем ответ от игрока
         $answer = prompt('Your answer');
-        if ($answer === (string) $correct) {
+        if ($answer === $correct) {
             line('Correct!');
         } else {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$correct}'");

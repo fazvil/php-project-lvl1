@@ -2,25 +2,22 @@
 
 namespace BrainGames\Games\Progression;
 
-// Описание игры
-function rulesGame()
-{
-    return 'What number is missing in the progression?';
-}
+use BrainGames\Cli;
 
-// Генерация массива данных для игры "Арифметическая прогрессия"
-function getData()
+const RULES_GAME = 'What number is missing in the progression?';
+
+function gameProgression()
 {
-    $amoundRounds = 3;                                      // Количество раундов
+    $valueListLength = 10;
     $data = [];
-    for ($i = 0; $i < $amoundRounds; $i++) {
+    for ($i = 0; $i < \BrainGames\Cli\AMOUND_ROUNDS; $i++) {
         $startNum = rand(1, 5);  // Стартовое число
         $step = rand(1, 5);      // Шаг
-        $empty = rand(1, 10);    // Позиция пустого значения
+        $empty = rand(1, $valueListLength);    // Позиция пустого значения
         $str = '';               // Получаемый вывод
         $value = $startNum;      // Добавляемое в $str значение
-        for ($i = 1; $i < 11; $i++) {
-            if ($i === $empty) {
+        for ($j = 1; $j <= $valueListLength; $j++) {
+            if ($j === $empty) {
                 $str .= '.. ';
                 $value += $step;
                 $correct = $value;
@@ -29,7 +26,7 @@ function getData()
                 $str .= (string) $value . ' ';
             }
         }
-        $data = [$str, $correct];
+        $data[] = [$str,(string) $correct];
     }
-    return $data;
+    \BrainGames\Cli\run(RULES_GAME, $data);
 }

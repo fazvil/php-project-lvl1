@@ -2,21 +2,16 @@
 
 namespace BrainGames\Games\Even;
 
-// Описание игры
-function rulesGame()
-{
-    return 'Answer "yes" if the number is even, otherwise answer "no".';
-}
+use BrainGames\Cli;
 
-// Генерация массива данных для игры "Проверка на четность"
-function getData()
-{
-    $amoundRounds = 3;                                      // Количество раундов
+const RULES_GAME = 'Answer "yes" if the number is even, otherwise answer "no".';
+function gameEven()
+{                                 
     $data = [];
-    for ($i = 0; $i < $amoundRounds; $i++) {
-        $guessNumber = rand(1, 100);                        // Загаданное число
-        $correct = ($guessNumber % 2 === 0) ? 'yes' : 'no'; // Правильный ответ
+    for ($i = 0; $i < \BrainGames\Cli\AMOUND_ROUNDS; $i++) {
+        $guessNumber = rand(1, 100);                       
+        $correct = ($guessNumber % 2 === 0) ? 'yes' : 'no';
         $data[] = [$guessNumber, $correct];
     }
-    return $data;
+    \BrainGames\Cli\run(RULES_GAME, $data);
 }

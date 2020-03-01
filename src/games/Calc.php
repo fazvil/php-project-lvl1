@@ -2,35 +2,31 @@
 
 namespace BrainGames\Games\Calc;
 
-// Описание игры
-function rulesGame()
-{
-    return 'What is the result of the expression?';
-}
+use BrainGames\Cli;
 
-// // Генерация массива данных для игры "Калькулятор"
-function getData()
-{
-    $amoundRounds = 3;                                      // Количество раундов
+const RULES_GAME = 'What is the result of the expression?';
+function gameCalc()
+{                                  
     $data = [];
-    for ($i = 0; $i < $amoundRounds; $i++) {
-        $guess1 = rand(1, 10);
-        $guess2 = rand(1, 10);
-        $operation = rand(1, 3);
-        switch ($operation) {
-            case 1:
-                $task = "{$guess1} + {$guess2}";
-                $correct = $guess1 + $guess2;
+    for ($i = 0; $i < \BrainGames\Cli\AMOUND_ROUNDS; $i++) {
+        $guessNum1 = rand(1, 10);
+        $guessNum2 = rand(1, 10);
+        $operation = ['+', '-', '*'];
+        $randOperation = $operation[array_rand($operation, 1)];
+        switch ($randOperation) {
+            case '+':
+                $task = "{$guessNum1} + {$guessNum2}";
+                $correct = $guessNum1 + $guessNum2;
                 break;
-            case 2:
-                $task = "{$guess1} - {$guess2}";
-                $correct = $guess1 - $guess2;
+            case '-':
+                $task = "{$guessNum1} - {$guessNum2}";
+                $correct = $guessNum1 - $guessNum2;
                 break;
-            case 3:
-                $task = "{$guess1} * {$guess2}";
-                $correct = $guess1 * $guess2;
+            case '*':
+                $task = "{$guessNum1} * {$guessNum2}";
+                $correct = $guessNum1 * $guessNum2;
         }
-        $data[] = [$task, $correct];
+        $data[] = [$task,(string) $correct];
     }
-    return $data;
+    \BrainGames\Cli\run(RULES_GAME, $data);
 }

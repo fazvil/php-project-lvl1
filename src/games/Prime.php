@@ -2,18 +2,14 @@
 
 namespace BrainGames\Games\Prime;
 
-// Описание игры
-function rulesGame()
-{
-    return 'Answer "yes" if given number is prime. Otherwise answer "no".';
-}
+use BrainGames\Cli;
 
-// Генерация массива данных для игры "Простое ли число?"
-function getData()
+const RULES_GAME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+function gamePrime()
 {
-    $amoundRounds = 3;                                      // Количество раундов
     $data = [];
-    for ($i = 0; $i < $amoundRounds; $i++) {
+    for ($i = 0; $i < \BrainGames\Cli\AMOUND_ROUNDS; $i++) {
         $guess = rand(2, 100);
         if ($guess == 2 || $guess == 3) {
             $correct = 'yes';
@@ -28,5 +24,5 @@ function getData()
         }
         $data[] = [$guess, $correct];
     }
-    return $data;
+    \BrainGames\Cli\run(RULES_GAME, $data);
 }

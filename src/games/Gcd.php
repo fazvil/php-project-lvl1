@@ -2,18 +2,13 @@
 
 namespace BrainGames\Games\Gcd;
 
-// Описание игры
-function rulesGame()
-{
-    return 'Find the greatest common divisor of given numbers.';
-}
+use BrainGames\Cli;
 
-// Генерация массива данных для игры "НОД"
-function getData()
+const RULES_GAME = 'Find the greatest common divisor of given numbers.';
+function gameGcd()
 {
-    $amoundRounds = 3;                                      // Количество раундов
     $data = [];
-    for ($i = 0; $i < $amoundRounds; $i++) {
+    for ($i = 0; $i < \BrainGames\Cli\AMOUND_ROUNDS; $i++) {
         $num1 = rand(1, 50);
         $num2 = rand(1, 50);
         $guess = "{$num1} {$num2}";
@@ -26,7 +21,7 @@ function getData()
             }
         }
         $result = $num1;
-        $data[] = [$guess, $result];
+        $data[] = [$guess,(string) $result];
     }
-    return $data;
+    \BrainGames\Cli\run(RULES_GAME, $data);
 }
