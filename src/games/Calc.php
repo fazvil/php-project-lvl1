@@ -14,17 +14,15 @@ function gameCalc()
         $number2 = rand(1, 10);
         $operations = ['+', '-', '*'];
         $randOperation = $operations[array_rand($operations, 1)];
+        $question = "{$number1} {$randOperation} {$number2}";
         switch ($randOperation) {
             case '+':
-                $question = "{$number1} + {$number2}";
                 $answer = $number1 + $number2;
                 break;
             case '-':
-                $question = "{$number1} - {$number2}";
                 $answer = $number1 - $number2;
                 break;
             case '*':
-                $question = "{$number1} * {$number2}";
                 $answer = $number1 * $number2;
         }
         $data[] = [$question,(string) $answer];
