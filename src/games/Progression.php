@@ -20,13 +20,13 @@ function gameProgression()
             if ($j === $empty) {
                 $str .= '.. ';
                 $value += $step;
-                $correct = $value;
+                $answer = $value;
             } else {
                 $value += $step;
                 $str .= (string) $value . ' ';
             }
         }
-        $data[] = [$str,(string) $correct];
+        $data[] = [$str,(string) $answer];
     }
     run(RULES_GAME, $data);
 }

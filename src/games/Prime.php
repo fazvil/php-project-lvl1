@@ -10,19 +10,19 @@ function gamePrime()
 {
     $data = [];
     for ($i = 0; $i < AMOUND_ROUNDS; $i++) {
-        $guess = rand(2, 100);
-        if ($guess == 2 || $guess == 3) {
-            $correct = 'yes';
+        $question = rand(2, 100);
+        if ($question == 2 || $question == 3) {
+            $answer = 'yes';
         }
-        for ($divider = 2; $divider <= intdiv($guess, 2); $divider++) {
-            if ($guess % $divider == 0) {
-                $correct = 'no';
+        for ($divider = 2; $divider <= intdiv($question, 2); $divider++) {
+            if ($question % $divider == 0) {
+                $answer = 'no';
                 break;
             } else {
-                $correct = 'yes';
+                $answer = 'yes';
             }
         }
-        $data[] = [$guess, $correct];
+        $data[] = [$question, $answer];
     }
     run(RULES_GAME, $data);
 }

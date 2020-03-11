@@ -10,24 +10,24 @@ function gameCalc()
 {
     $data = [];
     for ($i = 0; $i < AMOUND_ROUNDS; $i++) {
-        $guessNum1 = rand(1, 10);
-        $guessNum2 = rand(1, 10);
-        $operation = ['+', '-', '*'];
-        $randOperation = $operation[array_rand($operation, 1)];
+        $number1 = rand(1, 10);
+        $number2 = rand(1, 10);
+        $operations = ['+', '-', '*'];
+        $randOperation = $operations[array_rand($operations, 1)];
         switch ($randOperation) {
             case '+':
-                $task = "{$guessNum1} + {$guessNum2}";
-                $correct = $guessNum1 + $guessNum2;
+                $question = "{$number1} + {$number2}";
+                $answer = $number1 + $number2;
                 break;
             case '-':
-                $task = "{$guessNum1} - {$guessNum2}";
-                $correct = $guessNum1 - $guessNum2;
+                $question = "{$number1} - {$number2}";
+                $answer = $number1 - $number2;
                 break;
             case '*':
-                $task = "{$guessNum1} * {$guessNum2}";
-                $correct = $guessNum1 * $guessNum2;
+                $question = "{$number1} * {$number2}";
+                $answer = $number1 * $number2;
         }
-        $data[] = [$task,(string) $correct];
+        $data[] = [$question,(string) $answer];
     }
     run(RULES_GAME, $data);
 }

@@ -16,17 +16,17 @@ function run($rulesGame, $data)
     line("Hello, %s!", $name);
 
     // В цикле задаем вопрос и получаем ответ
-    foreach ($data as $part) {
-        [$guess, $correct] = $part; // Значение, и правильный вариант ответа
+    foreach ($data as $round) {
+        [$question, $correctAnswer] = $round; // Значение, и правильный вариант ответа
         line();
-        line("Question: {$guess}");
+        line("Question: {$question}");
 
         // Получаем ответ от игрока
         $answer = prompt('Your answer');
-        if ($answer === $correct) {
+        if ($answer === $correctAnswer) {
             line('Correct!');
         } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correct}'");
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'");
             return;
         }
     }

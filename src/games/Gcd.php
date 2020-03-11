@@ -10,19 +10,19 @@ function gameGcd()
 {
     $data = [];
     for ($i = 0; $i < AMOUND_ROUNDS; $i++) {
-        $num1 = rand(1, 50);
-        $num2 = rand(1, 50);
-        $guess = "{$num1} {$num2}";
+        $number1 = rand(1, 50);
+        $number2 = rand(1, 50);
+        $question = "{$number1} {$number2}";
 
-        while ($num1 != $num2) {
-            if ($num1 > $num2) {
-                $num1 -= $num2;
+        while ($number1 != $number2) {
+            if ($number1 > $number2) {
+                $number1 -= $number2;
             } else {
-                $num2 -= $num1;
+                $number2 -= $number1;
             }
         }
-        $result = $num1;
-        $data[] = [$guess,(string) $result];
+        $answer = $number1;
+        $data[] = [$question,(string) $answer];
     }
     run(RULES_GAME, $data);
 }

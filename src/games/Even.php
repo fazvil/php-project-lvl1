@@ -10,9 +10,9 @@ function gameEven()
 {
     $data = [];
     for ($i = 0; $i < AMOUND_ROUNDS; $i++) {
-        $guessNumber = rand(1, 100);
-        $correct = ($guessNumber % 2 === 0) ? 'yes' : 'no';
-        $data[] = [$guessNumber, $correct];
+        $question = rand(1, 100);
+        $answer = ($question % 2 === 0) ? 'yes' : 'no';
+        $data[] = [$question, $answer];
     }
     run(RULES_GAME, $data);
 }
