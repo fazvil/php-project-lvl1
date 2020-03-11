@@ -1,8 +1,9 @@
 <?php
 
-namespace BrainGames\Games\Even;
+namespace BrainGames\games\Even;
 
 use BrainGames\Cli;
+use function BrainGames\Cli\run;
 
 const RULES_GAME = 'Answer "yes" if the number is even, otherwise answer "no".';
 function gameEven()
@@ -13,5 +14,5 @@ function gameEven()
         $correct = ($guessNumber % 2 === 0) ? 'yes' : 'no';
         $data[] = [$guessNumber, $correct];
     }
-    \BrainGames\Cli\run(RULES_GAME, $data);
+    run(RULES_GAME, $data);
 }

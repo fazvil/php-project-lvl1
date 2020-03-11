@@ -1,8 +1,9 @@
 <?php
 
-namespace BrainGames\Games\Gcd;
+namespace BrainGames\games\Gcd;
 
 use BrainGames\Cli;
+use function BrainGames\Cli\run;
 
 const RULES_GAME = 'Find the greatest common divisor of given numbers.';
 function gameGcd()
@@ -23,5 +24,5 @@ function gameGcd()
         $result = $num1;
         $data[] = [$guess,(string) $result];
     }
-    \BrainGames\Cli\run(RULES_GAME, $data);
+    run(RULES_GAME, $data);
 }

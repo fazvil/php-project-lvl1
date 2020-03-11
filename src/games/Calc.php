@@ -1,8 +1,9 @@
 <?php
 
-namespace BrainGames\Games\Calc;
+namespace BrainGames\games\Calc;
 
 use BrainGames\Cli;
+use function BrainGames\Cli\run;
 
 const RULES_GAME = 'What is the result of the expression?';
 function gameCalc()
@@ -28,5 +29,5 @@ function gameCalc()
         }
         $data[] = [$task,(string) $correct];
     }
-    \BrainGames\Cli\run(RULES_GAME, $data);
+    run(RULES_GAME, $data);
 }

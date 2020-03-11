@@ -1,11 +1,11 @@
 <?php
 
-namespace BrainGames\Games\Progression;
+namespace BrainGames\games\Progression;
 
 use BrainGames\Cli;
+use function BrainGames\Cli\run;
 
 const RULES_GAME = 'What number is missing in the progression?';
-
 function gameProgression()
 {
     $valueListLength = 10;
@@ -28,5 +28,5 @@ function gameProgression()
         }
         $data[] = [$str,(string) $correct];
     }
-    \BrainGames\Cli\run(RULES_GAME, $data);
+    run(RULES_GAME, $data);
 }
