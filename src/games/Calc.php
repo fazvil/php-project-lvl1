@@ -10,20 +10,20 @@ function gameCalc()
 {
     $data = [];
     for ($i = 0; $i < AMOUND_ROUNDS; $i++) {
-        $number1 = rand(1, 10);
-        $number2 = rand(1, 10);
+        $num1 = rand(1, 10);
+        $num2 = rand(1, 10);
         $operations = ['+', '-', '*'];
         $randOperation = $operations[array_rand($operations, 1)];
-        $question = "{$number1} {$randOperation} {$number2}";
+        $question = "{$num1} {$randOperation} {$num2}";
         switch ($randOperation) {
             case '+':
-                $answer = $number1 + $number2;
+                $answer = $num1 + $num2;
                 break;
             case '-':
-                $answer = $number1 - $number2;
+                $answer = $num1 - $num2;
                 break;
             case '*':
-                $answer = $number1 * $number2;
+                $answer = $num1 * $num2;
         }
         $data[] = [$question,(string) $answer];
     }
