@@ -2,14 +2,14 @@
 
 namespace BrainGames\games\Calc;
 
-use BrainGames\Cli;
+use const BrainGames\Cli\AMOUND_ROUNDS;
 use function BrainGames\Cli\run;
 
 const RULES_GAME = 'What is the result of the expression?';
 function gameCalc()
 {
     $data = [];
-    for ($i = 0; $i < \BrainGames\Cli\AMOUND_ROUNDS; $i++) {
+    for ($i = 0; $i < AMOUND_ROUNDS; $i++) {
         $guessNum1 = rand(1, 10);
         $guessNum2 = rand(1, 10);
         $operation = ['+', '-', '*'];
