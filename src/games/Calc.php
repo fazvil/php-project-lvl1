@@ -1,11 +1,12 @@
 <?php
 
-namespace BrainGames\games\Calc;
-
 use const BrainGames\Cli\ROUNDS_COUNT;
 use function BrainGames\Cli\run;
 
-const RULES_GAME = 'What is the result of the expression?';
+namespace BrainGames\games\Calc;
+
+const GAME_DESCRIPTION = 'What is the result of the expression?';
+
 function gameCalc()
 {
     $data = [];
@@ -27,5 +28,5 @@ function gameCalc()
         }
         $data[] = [$question,(string) $answer];
     }
-    run(RULES_GAME, $data);
+    run(GAME_DESCRIPTION, $data);
 }

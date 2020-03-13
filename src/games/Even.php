@@ -1,11 +1,12 @@
 <?php
 
-namespace BrainGames\games\Even;
-
 use const BrainGames\Cli\ROUNDS_COUNT;
 use function BrainGames\Cli\run;
 
-const RULES_GAME = 'Answer "yes" if the number is even, otherwise answer "no".';
+namespace BrainGames\games\Even;
+
+const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 function gameEven()
 {
     $data = [];
@@ -14,5 +15,5 @@ function gameEven()
         $answer = ($question % 2 === 0) ? 'yes' : 'no';
         $data[] = [$question, $answer];
     }
-    run(RULES_GAME, $data);
+    run(GAME_DESCRIPTION, $data);
 }

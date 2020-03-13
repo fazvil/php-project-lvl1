@@ -1,13 +1,13 @@
 <?php
 
-namespace BrainGames\games\Gcd;
-
 use const BrainGames\Cli\ROUNDS_COUNT;
 use function BrainGames\Cli\run;
 
-const RULES_GAME = 'Find the greatest common divisor of given numbers.';
+namespace BrainGames\games\Gcd;
 
-function nod($num1, $num2)
+const GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
+
+function getNod($num1, $num2)
 {
     while ($num1 != $num2) {
         if ($num1 > $num2) {
@@ -26,8 +26,8 @@ function gameGcd()
         $num1 = rand(1, 50);
         $num2 = rand(1, 50);
         $question = "{$num1} {$num2}";
-        $answer = nod($num1, $num2);
+        $answer = getNod($num1, $num2);
         $data[] = [$question,(string) $answer];
     }
-    run(RULES_GAME, $data);
+    run(GAME_DESCRIPTION, $data);
 }

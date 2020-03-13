@@ -1,11 +1,12 @@
 <?php
 
-namespace BrainGames\games\Progression;
-
 use const BrainGames\Cli\ROUNDS_COUNT;
 use function BrainGames\Cli\run;
 
-const RULES_GAME = 'What number is missing in the progression?';
+namespace BrainGames\games\Progression;
+
+const GAME_DESCRIPTION = 'What number is missing in the progression?';
+
 function gameProgression()
 {
     $listLength = 10;
@@ -26,5 +27,5 @@ function gameProgression()
         }
         $data[] = [$question,(string) $answer];
     }
-    run(RULES_GAME, $data);
+    run(GAME_DESCRIPTION, $data);
 }

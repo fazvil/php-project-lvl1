@@ -1,11 +1,11 @@
 <?php
 
-namespace BrainGames\games\Prime;
-
 use const BrainGames\Cli\ROUNDS_COUNT;
 use function BrainGames\Cli\run;
 
-const RULES_GAME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+namespace BrainGames\games\Prime;
+
+const GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function isPrime($num)
 {
@@ -29,5 +29,5 @@ function gamePrime()
         $answer = isPrime($question);
         $data[] = [$question, $answer];
     }
-    run(RULES_GAME, $data);
+    run(GAME_DESCRIPTION, $data);
 }

@@ -6,11 +6,11 @@ use function cli\line;
 use function cli\prompt;
 
 const ROUNDS_COUNT = 3; // Число раундов
-function run($rulesGame, $data)
+function run($gameDescription, $data)
 {
     // Узнаем имя игрока и приветсвуем
     line('Welcome to the Brain Game!');
-    line($rulesGame); // Описание игры, полученное в аргументе функции
+    line($gameDescription); // Описание игры, полученное в аргументе функции
     line();
     $name = prompt('May If have your name?');
     line("Hello, %s!", $name);
