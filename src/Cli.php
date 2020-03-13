@@ -6,6 +6,7 @@ use function cli\line;
 use function cli\prompt;
 
 const ROUNDS_COUNT = 3; // Число раундов
+
 function run($gameDescription, $data)
 {
     // Узнаем имя игрока и приветсвуем

@@ -1,7 +1,10 @@
 <?php
+
 namespace BrainGames\games\Gcd;
-use const BrainGames\Cli\ROUNDS_COUNT;
+
 use function BrainGames\Cli\run;
+
+use const BrainGames\Cli\ROUNDS_COUNT;
 
 const GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 

@@ -1,7 +1,10 @@
 <?php
+
 namespace BrainGames\games\Calc;
-use const BrainGames\Cli\ROUNDS_COUNT;
+
 use function BrainGames\Cli\run;
+
+use const BrainGames\Cli\ROUNDS_COUNT;
 
 const GAME_DESCRIPTION = 'What is the result of the expression?';
 
