@@ -1,9 +1,7 @@
 <?php
-
+namespace BrainGames\games\Even;
 use const BrainGames\Cli\ROUNDS_COUNT;
 use function BrainGames\Cli\run;
-
-namespace BrainGames\games\Even;
 
 const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 

@@ -1,9 +1,7 @@
 <?php
-
+namespace BrainGames\games\Prime;
 use const BrainGames\Cli\ROUNDS_COUNT;
 use function BrainGames\Cli\run;
-
-namespace BrainGames\games\Prime;
 
 const GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
