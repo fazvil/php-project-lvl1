@@ -2,7 +2,7 @@
 
 namespace BrainGames\games\Progression;
 
-use const BrainGames\Cli\AMOUND_ROUNDS;
+use const BrainGames\Cli\ROUNDS_COUNT;
 use function BrainGames\Cli\run;
 
 const RULES_GAME = 'What number is missing in the progression?';
@@ -10,7 +10,7 @@ function gameProgression()
 {
     $listLength = 10;
     $data = [];
-    for ($i = 0; $i < AMOUND_ROUNDS; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $startNum = rand(1, 5);  // Стартовое число
         $step = rand(1, 5);      // Шаг
         $empty = rand(0, $listLength);    // Позиция пустого значения
