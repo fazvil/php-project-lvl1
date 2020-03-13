@@ -1,7 +1,9 @@
 <?php
+
 namespace BrainGames\games\Progression;
-use const BrainGames\Cli\ROUNDS_COUNT;
+
 use function BrainGames\Cli\run;
+use const BrainGames\Cli\ROUNDS_COUNT;
 
 const GAME_DESCRIPTION = 'What number is missing in the progression?';
 
