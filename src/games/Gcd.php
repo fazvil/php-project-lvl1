@@ -28,7 +28,7 @@ function gameGcd()
         $num2 = rand(1, 50);
         $question = "{$num1} {$num2}";
         $answer = getNod($num1, $num2);
-        $data[] = [$question,(string) $answer];
+        $data[] = [$question, (string) $answer];
     }
     run(GAME_DESCRIPTION, $data);
 }
