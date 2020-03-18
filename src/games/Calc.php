@@ -27,7 +27,7 @@ function gameCalc()
             case '*':
                 $answer = $num1 * $num2;
         }
-        $data[] = [$question,(string) $answer];
+        $data[] = [$question, (string) $answer];
     }
     run(GAME_DESCRIPTION, $data);
 }

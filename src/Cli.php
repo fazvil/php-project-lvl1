@@ -17,11 +17,9 @@ function run($gameDescription, $data)
     line("Hello, %s!", $name);
 
     // В цикле задаем вопрос и получаем ответ
-    foreach ($data as $round) {
-        [$question, $correctAnswer] = $round; // Значение, и правильный вариант ответа
+    foreach ($data as [$question, $correctAnswer]) {
         line();
         line("Question: {$question}");
-
         // Получаем ответ от игрока
         $answer = prompt('Your answer');
         if ($answer === $correctAnswer) {
@@ -31,7 +29,6 @@ function run($gameDescription, $data)
             return;
         }
     }
-
     // Если игрок ответил верно на все 3 вопроса, выводится сообщение
     line();
     line("Congratulations, {$name}!");
