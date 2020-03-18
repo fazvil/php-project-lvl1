@@ -22,9 +22,10 @@ function gameProgression()
             $addedElement = $startNum + $step * $j;
             if ($j === $hiddenElementPosition) {
                 $answer = $addedElement;
-                $addedElement = $hiddenElement;
+                $question = trim("{$question} {$hiddenElement}");
+            } else {
+                $question = trim("{$question} {$addedElement}");
             }
-            $question = trim("{$question} {$addedElement}");
         }
         $data[] = [$question, (string) $answer];
     }
