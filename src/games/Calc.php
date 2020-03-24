@@ -2,9 +2,9 @@
 
 namespace BrainGames\games\Calc;
 
-use function BrainGames\Cli\run;
+use function BrainGames\Engine\run;
 
-use const BrainGames\Cli\ROUNDS_COUNT;
+use const BrainGames\Engine\ROUNDS_COUNT;
 
 const GAME_DESCRIPTION = 'What is the result of the expression?';
 

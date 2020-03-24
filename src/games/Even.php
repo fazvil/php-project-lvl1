@@ -2,9 +2,9 @@
 
 namespace BrainGames\games\Even;
 
-use function BrainGames\Cli\run;
+use function BrainGames\Engine\run;
 
-use const BrainGames\Cli\ROUNDS_COUNT;
+use const BrainGames\Engine\ROUNDS_COUNT;
 
 const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 

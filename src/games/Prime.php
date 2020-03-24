@@ -2,9 +2,9 @@
 
 namespace BrainGames\games\Prime;
 
-use function BrainGames\Cli\run;
+use function BrainGames\Engine\run;
 
-use const BrainGames\Cli\ROUNDS_COUNT;
+use const BrainGames\Engine\ROUNDS_COUNT;
 
 const GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
